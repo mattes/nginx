@@ -1,4 +1,4 @@
 nginx
 =====
 
-universal docker nginx image
+nginx image used for debugging purposes.
