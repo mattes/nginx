@@ -1,5 +1,0 @@
-image: mattes/nginx
-volume:
-  - $PWD:/www-data
-publish:
-  - 8080:80

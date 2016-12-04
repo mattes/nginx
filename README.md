@@ -1,31 +1,13 @@
 nginx
 =====
 
-nginx image used for debugging purposes.
-
-fugu.yaml
+quick nginx serving via http2
 
 ```
-image: mattes/nginx
-name: foobar
-detach: true
-volume:
-  - $PWD:/www-data
-publish:
-  - 9090:80
+docker build -t mattes/nginx .
+docker push mattes/nginx
+
+docker run --name project123 -d -v $PWD:/var/www -p 8443:443 mattes/nginx
+open https://localhost:8443/
 ```
 
-
-Minimal Nginx Conf
-
-```
-http {
-    include /etc/nginx/mime.types;
-    server {
-        listen 80;
-        location / {
-            root /www-data/build;
-        }
-    }
-}
-```
